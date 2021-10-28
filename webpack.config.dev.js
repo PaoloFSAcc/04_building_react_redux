@@ -1,13 +1,13 @@
 const webpack = require("webpack");
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpacl-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 process.env.NODE_ENV = "development";
 
 module.exports = {
     mode: "development",
     target: "web",
-    devTool: "cheap-module-source-map", //see code in browser
+    devtool: "cheap-module-source-map", //see code in browser
     entry: "./src/index",
     output: {
         path: path.resolve(__dirname, "build"),
@@ -18,11 +18,11 @@ module.exports = {
         stats: "minimal",
         overlay: true,
         historyApiFallback: true,
-        disableHostcheck: true,
+        disableHostCheck: true,
         headers: { "Access-Control-Allow-Origin": "*" },
         https: false,
     },
-    plugin: [
+    plugins: [
         new HtmlWebpackPlugin({
             template: "src/index.html",
             favicon: "src/favicon.ico",
